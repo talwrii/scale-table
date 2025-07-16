@@ -77,8 +77,16 @@ def repeat(n, f, x):
     return r
 
 
-
 style = TableStyle()
+style.add('ALIGN', (0, 0), (-1, -1), 'CENTER')
+for col in range(0, 24):
+    for row in range(0, 24):
+        if col % 2 == row % 2 == 0:
+            style.add('BACKGROUND', (col, row), (col, row), colors.darkgrey)
+        elif col % 2 == 0 or row % 2 == 0:
+            style.add('BACKGROUND', (col, row), (col, row), colors.silver)
+
+
 
 rows = []
 circle_of_fifths = [repeat(i, fifth, 0) for i in range(12)]
@@ -86,9 +94,6 @@ for repeat in (0, 1):
     for i, x in enumerate(circle_of_fifths):
         row_num = i + 12 * repeat
         del i
-
-        if row_num % 2 == 0:
-            style.add('BACKGROUND', (0, row_num), (-1, row_num), colors.gainsboro)
 
         if x == 6:
             row = ['', 'C#', '', 'D#', '',  'E#', 'F#', '', 'G#', '', 'A#', 'B']
@@ -116,12 +121,9 @@ for repeat in (0, 1):
         rows.append(double_row)
 
 
-for col in range(0, 24, 2):
-    style.add('BACKGROUND', (col, 0), (col, -1), colors.lightgrey)
 
 
 
-style.add('ALIGN', (0, 0), (-1, -1), 'CENTER')
 
 
 
