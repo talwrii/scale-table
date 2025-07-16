@@ -12,8 +12,9 @@ With this in mind, I am going to improvish on the guitar while paying attention 
 Of course, formalized learning through learning pieces and exercises probably has some benefits... but I'm still probably not going to do it.
 
 ## The table
-<a href="scale.pdf"> <img src="scale.png" alt="scale"> </img> </a>
+There is a [PDF version](scale.pdf) and a [png version](scale.png)
 
+<a href="scale.pdf"> <img src="scale.png" alt="scale"> </img> </a>
 
 ## Usage
 You can copy this table and print it. If you want to regenerate you can:
@@ -22,6 +23,7 @@ You can copy this table and print it. If you want to regenerate you can:
 * Create a venv with `python -m venv env`
 * Install requirements iwth `env/bin/pip install -r requirements.txt`
 * Regenerates `scale.pdf` with `env/bin/python scale..py`
+* Convert this into a PNG with imagemagick and `convert scale.pdf scale.png`
 
 ## About me
 I am **@readwithai**. I create tools for reading, research and agency sometimes using the markdown editor [Obsidian](https://readwithai.substack.com/p/what-exactly-is-obsidian).
