@@ -5,9 +5,9 @@
 A table of various scales and their relationships and means to generate them.
 
 ## Motivation
-I learned to play the guitar by learning intervals rather than scales. This probably have some benefits - notes are kind of arbitrary can can get in the way - but notes are interesting too, so I am learning these.
+I learned to play the guitar by learning intervals rather than scales. This probably have some benefits - notes are kind of arbitrary can can get in the way - but notes are integral to standard ways of representing and talking about music and contain information about key relationships, so I am learning these now.
 
-With this in mind, I am going to improvish on the guitar while paying attention to scales on a chart. This is code to build this chart (because I am too lazy to do it manually in a spreadsheet).
+With this in mind, I am going to improvise on the guitar and violin while paying attention scales and intervals using this chart. Because I know the intervals and scales on the guitar I can use this play while looking at at the corresponding notes on the chart.
 
 Of course, formalized learning through learning pieces and exercises probably has some benefits... but I'm still probably not going to do it.
 
@@ -16,8 +16,15 @@ There is a [PDF version](scale.pdf) and a [png version](scale.png)
 
 <a href="scale.pdf"> <img src="scale.png" alt="scale"> </img> </a>
 
+
 ## Usage
-You can copy this table and print it. If you want to regenerate you can:
+The table consists of a row for every key, with all the notes in that key marked. You can derive the intervals between notes based on the number of grid squares between them. The grid has a crosshatched pattern to help you derive these intervals. The relative minor of each key is shown in purple. This combined with row below and above marks it easy to see the tonic, fifths, fifth, third, and fourth of a key.
+
+A full two octave is shown so that you can explore both above and below notes.
+
+
+## Remaking the table
+You can copy the table above and print it out. If you want to regenerate it (for example to tweak the colouring)
 
 * clone this repo
 * Create a venv with `python -m venv env`
