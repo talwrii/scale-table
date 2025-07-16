@@ -5,7 +5,7 @@
 A table of various scales and their relationships and means to generate them.
 
 ## Motivation
-I learned to play the guitar by learning intervals rather than scales. This probably have some benefits - notes are kind of arbitrary can can get in the way - but notes are integral to standard ways of representing and talking about music and contain information about key relationships, so I am learning these now.
+I learned to play the guitar by learning intervals and shapes rather than notes and keys. This probably have some benefits - absolute notes are kind of arbitrary can can get in the way - but notes are integral to standard ways of representing and talking about music and contain information about key relationships, so I am learning these now.
 
 With this in mind, I am going to improvise on the guitar and violin while paying attention scales and intervals using this chart. Because I know the intervals and scales on the guitar I can use this play while looking at at the corresponding notes on the chart.
 
