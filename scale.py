@@ -90,9 +90,9 @@ for col in range(0, 24):
 
 rows = []
 circle_of_fifths = [repeat(i, fifth, 0) for i in range(12)]
-for repeat in (0, 1):
+for repeat_index in (0, 1):
     for i, x in enumerate(circle_of_fifths):
-        row_num = i + 12 * repeat
+        row_num = i + 12 * repeat_index
         del i
 
         if x == 6:
@@ -120,16 +120,64 @@ for repeat in (0, 1):
 
         rows.append(double_row)
 
-
-
-
-
-
-
-
-
-
 doc = SimpleDocTemplate("scale.pdf", pagesize=landscape(A4))
 table = Table(rows)
 table.setStyle(style)
 doc.build([table])
+
+def generate_scale_start_root(filename):
+    doc = SimpleDocTemplate(filename, pagesize=landscape(A4), topMargin=10, bottomMargin=10)
+
+    aligned_rows = []
+    aligned_style = TableStyle()
+    aligned_style.add('ALIGN', (0, 0), (-1, -1), 'CENTER')
+
+    degree_header = ['I / iii', 'II / iv', 'III / v', 'IV / vi', 'V / vii', 'VI / i', 'VII / ii']
+    header_row = degree_header + degree_header
+    aligned_rows.append(header_row)
+
+    circle_of_fifths = [repeat(i, fifth, 0) for i in range(12)]
+
+    for repeat_index in (0, 1):
+        for row_offset, tonic in enumerate(circle_of_fifths, start=1):
+            row_num = 12 * repeat_index + row_offset
+            scale = major_scale(tonic)
+
+            flat_names = list(map(flat_name, scale))
+            sharp_names = list(map(sharp_name, scale))
+
+            if not letter_collision(flat_names):
+                row = flat_names
+            elif not letter_collision(sharp_names):
+                row = sharp_names
+            elif tonic == 6:
+                row = ['F#', 'G#', 'A#', 'B', 'C#', 'D#', 'E#']
+            else:
+                raise Exception(f"Cannot resolve enharmonic spelling for tonic {tonic}")
+
+            double_row = row + row
+
+            tonic_names = (flat_name(tonic), sharp_name(tonic))
+            relative_minor = (tonic - 3) % 12
+            minor_names = (flat_name(relative_minor), sharp_name(relative_minor))
+
+            for i, name in enumerate(double_row):
+                if name in tonic_names:
+                    aligned_style.add('BACKGROUND', (i, row_num), (i, row_num), colors.lightgreen)
+                if name in minor_names:
+                    aligned_style.add('BACKGROUND', (i, row_num), (i, row_num), colors.violet)
+
+                if '#' in name:
+                    aligned_style.add('TEXTCOLOR', (i, row_num), (i, row_num), colors.red)
+                if 'b' in name:
+                    aligned_style.add('TEXTCOLOR', (i, row_num), (i, row_num), colors.blue)
+
+            aligned_rows.append(double_row)
+
+    aligned_table = Table(aligned_rows)
+    aligned_table.setStyle(aligned_style)
+    doc.build([aligned_table])
+
+
+
+generate_scale_start_root('scale-start-root.pdf')

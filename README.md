@@ -2,7 +2,7 @@
 **@readwithai** - [X](https://x.com/readwithai) - [blog](https://readwithai.substack.com/) - [machine-aided reading](https://www.reddit.com/r/machineAidedReading/) - [📖](https://readwithai.substack.com/p/what-is-reading-broadly-defined
 )[⚡️](https://readwithai.substack.com/s/technical-miscellany)[🖋️](https://readwithai.substack.com/p/note-taking-with-obsidian-much-of)
 
-A table of various scales and their relationships and means to generate them.
+Tables of various scales and their relationships and means to generate them.
 
 ## Motivation
 I learned to play the guitar by learning intervals rather than scales. This probably have some benefits - notes are kind of arbitrary can can get in the way - but notes are integral to standard ways of representing and talking about music and contain information about key relationships, so I am learning these now.
@@ -15,6 +15,8 @@ Of course, formalized learning through learning pieces and exercises probably ha
 There is a [PDF version](scale.pdf) and a [png version](scale.png)
 
 <a href="scale.pdf"> <img src="scale.png" alt="scale"> </img> </a>
+
+<a href="scale-start-root.pdf"> <img src="scale-start-root.png" alt="scale"> </img> </a>
 
 
 ## Usage
@@ -30,7 +32,7 @@ You can copy the table above and print it out. If you want to regenerate it (for
 * Create a venv with `python -m venv env`
 * Install requirements iwth `env/bin/pip install -r requirements.txt`
 * Regenerates `scale.pdf` with `env/bin/python scale..py`
-* Convert this into a PNG with imagemagick and `convert scale.pdf scale.png`
+* Convert this into a PNG with imagemagick and `convert scale.pdf scale.png`, `convert scale-start-root.pdf scale-start-root.pdf`
 
 ## About me
 I am **@readwithai**. I create tools for reading, research and agency sometimes using the markdown editor [Obsidian](https://readwithai.substack.com/p/what-exactly-is-obsidian).
